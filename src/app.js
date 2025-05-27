@@ -9,7 +9,8 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression())
-//init db
 
+//init db
+require('./dbs/init.mongodb');
 //handling error
 module.exports = app;
