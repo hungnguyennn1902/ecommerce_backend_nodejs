@@ -1,11 +1,11 @@
 const dev = {
     app: {
-        port: process.env.DEV_APP_PORT || 3052
+        port: process.env.DEV_APP_PORT || 3000
     },
     db: {
         host: process.env.DEV_DB_HOST || 'localhost',
         port: process.env.DEV_DB_PORT || 27017,
-        name: process.env.DEV_DB_NAME || 'shopDEV'
+        name: process.env.DEV_DB_NAME || 'shopDev'
     }
 }
 
@@ -16,7 +16,7 @@ const pro = {
     db: {
         host: process.env.PRO_DB_HOST || 'localhost',
         port: process.env.PRO_DB_PORT || 27017,
-        name: process.env.PRO_DB_NAME || 'shopPRO'
+        name: process.env.PRO_DB_NAME || 'shopDev'
     }
 }
 
