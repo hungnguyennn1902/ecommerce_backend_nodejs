@@ -1,14 +1,19 @@
 'use strict'
 
-const { Schema, mongoose } = require('mongoose'); // Erase if already required
+
+const { Schema, model } = require('mongoose'); // Erase if already required
 const DOCUMENT_NAME = 'Key';
 const COLLECTION_NAME = 'Keys';
 // Declare the Schema of the Mongo model
-var keyTokenSchema = new mongoose.Schema({
+var keyTokenSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'Shop',
+    },
+    privateKey: {
+        type: String,
+        required: true,
     },
     publicKey: {
         type: String,
@@ -24,4 +29,4 @@ var keyTokenSchema = new mongoose.Schema({
 });
 
 //Export the model
-module.exports = mongoose.model(DOCUMENT_NAME, keyTokenSchema);
+module.exports = model(DOCUMENT_NAME, keyTokenSchema);

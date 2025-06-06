@@ -16,9 +16,10 @@ const createTokenPair = async (payload, publicKey, privateKey) => {
             expiresIn: '7 days',
         });
 
+        
         JWT.verify(accessToken, publicKey, (err, decoded) => {
             if (err) {
-                log('Access Token is invalid:', err.message);
+                console.log('Access Token is invalid:', err.message);
             } else {
                 console.log('Access Token is valid:', decoded);
             }

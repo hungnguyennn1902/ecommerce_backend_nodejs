@@ -4,7 +4,8 @@ const shopModel = require("../models/shop.model")
 const keyTokenService = require("./keyToken.service")
 const createTokenPair = require("../auth/authUtils")
 const bcrypt = require('bcrypt')
-const crypto = require('crypto')
+const crypto = require('node:crypto')
+const getIntoData = require("../utils")
 
 const roleShop = {
     SHOP: 'SHOP',
@@ -32,22 +33,34 @@ class AccessService {
             })
             if (newShop) {
                 // created privateKey, publicKey
-                const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
-                    modulusLength: 4096,
-                })
-                console.log({ privateKey, publicKey }) //save collection KeyStore
+                // const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
+                //     modulusLength: 4096,
+                //     publicKeyEncoding: {
+                //         type: 'pkcs1',
+                //         format: 'pem'
+                //     },
+                //     privateKeyEncoding: {
+                //         type: 'pkcs1',
+                //         format: 'pem'
+                //     }
+                // })
 
-                const publicKeyString = await keyTokenService.createKeyToken({
+                const privateKey = crypto.randomBytes(64).toString('hex')
+                const publicKey = crypto.randomBytes(64).toString('hex')
+
+                const keyStore = await keyTokenService.createKeyToken({
                     userId: newShop._id,
-                    publicKey: publicKey
+                    publicKey,
+                    privateKey
                 })
 
-                if (!publicKeyString) {
+                if (!keyStore) {
                     return {
                         code: 'xxxxx',
-                        message: 'Failed to create public key token',
+                        message: 'Failed to create public key Store',
                     }
                 }
+
 
                 // create token pair
                 const tokens = await createTokenPair(
@@ -55,18 +68,24 @@ class AccessService {
                     publicKey,
                     privateKey
                 )
+
+                console.log('Tokens created successfully')
+
                 return {
                     code: '201',
                     message: 'Shop created successfully',
                     data: {
-                        shop: newShop,
+                        shop: getIntoData({
+                            object: newShop,
+                            fields: ['_id', 'name', 'email']
+                        }),
                         tokens
                     }
                 }
             }
             return {
                 code: '200',
-                metadata: null,
+                data: null,
             }
         } catch (error) {
             return {
