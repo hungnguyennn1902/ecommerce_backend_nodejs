@@ -1,6 +1,6 @@
 'use strict'
 
-
+const mongoose = require('mongoose');
 const keyTokenModel = require('../models/keytoken.model');
 
 class KeyTokenService {

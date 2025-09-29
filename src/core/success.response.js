@@ -24,9 +24,8 @@ class OK extends SuccessResponse {
     }
 }
 class Created extends SuccessResponse {
-    constructor({message, data, options={}}) {
+    constructor({message, data}) {
         super({message, status: StatusCode.CREATED, reasonStatusCode: ReasonStatusCode.CREATED, data})
-        this.options = options
     }
 }
 module.exports = {
