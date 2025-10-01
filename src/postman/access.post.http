@@ -3,9 +3,102 @@
 
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
 
 {
     "name": "Test Shop",
-    "email": "shop2@gmail.com",
-    "password": "password123"
+    "email": "test10@gmail.com",
+    "password": "12345678"
+}
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "email": "test10@gmail.com",
+    "password": "12345678"
+}
+
+### logout
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTg3MDAyNjUsImV4cCI6MTc1ODg3MzA2NX0.feO4eHAUKXiMKl5tILsKFgb96Qv1m2vmk5CNn0vKy7ab49lbOy5Yofw2Ljr-5cGo4mXnabZqeLHZpMa3SJlggVW3bQELGmNlw62WLS7xkSqX05pa3b4qualCriwc3U5l9avVW-koodMiyA60rmWj2wdInEtOd43sQC-2bH2TitW1aBBJC-BU5uNPdgr6D4Kx0rTaNL3yBdi1bIr1fqbVN2YAEJ2qyZUnpgZqJ7YVmsoVGKy9aMBGzkkaAvrYIxwYxowDDpHIZf60mrZHsKunVomUCz6Pyo3uGEfvSEdYcJuz5a3gVM4hYUjdhPnQx4xJHHjVdW_vV17xiDbWbt2dvg
+
+### handle refresh token
+POST {{url_dev}}/shop/handle-refresh-token
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-refresh-token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTg3MjczNDYsImV4cCI6MTc1OTMzMjE0Nn0.FWIJkynTVDELsXg7foevOEw38AlB3Gfp7lM4i2BhOJP_w7hrPCRrloAEeZ9s0mTaQIDX6-uJVJzyEXTP0kJLYotgu4RpNIQbl2kl6UobY0bn2wcbuMWzGvrn1Yoli4_AhTZlsJvZvuJ_s3Bx_oXGQPct2PCPW3P7fY2_YgG8Ru0Z3t9kW2rTeqfRgqvrr9q9jMlI73YCfzxOYikuM7akjhcGEAykgrK8HAVwOE-tmQsXM9p1F3oykHOLy_zfcx8SqQFiA8I3fefc0ZbpOH7kkGXXyO9_R0FyhsWAucR02-xDTA-7mhbE0UTcJEP6VP5CBRxGdhvueGFAJvSinx-Yeg
+
+### create product
+POST {{url_dev}}/product/create
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+
+{
+    "product_name": "Sydney Sweeny Jeans",
+    "product_description": "A pair of stylish jeans",
+    "product_price": 100001,
+    "product_type": "Clothing",
+    "product_thumb" : "product_thumb",
+    "product_quantity": 1500,
+    "product_attributes": {
+        "brand": "Boo1hoo154dsf",
+        "size": "MLLL11111",
+        "material": "Denim"
+    }
+}
+
+### find all drafts for shop
+GET {{url_dev}}/product/published/all
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+
+### publish product
+POST {{url_dev}}/product/publish/68da52410b63dfc65614e7db
+Content-Type: application/json
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+
+### unpublish product
+POST {{url_dev}}/product/unpublish/68da52410b63dfc65614e7db
+Content-Type: application/json
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+
+### get list search products
+GET {{url_dev}}/product/search/sweeny
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### get all products
+GET {{url_dev}}/product/all
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### get product details
+GET {{url_dev}}/product/68da52410b63dfc65614e7db
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### update product
+PATCH {{url_dev}}/product/68da52410b63dfc65614e7db
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+
+{
+    "product_type": "Clothing",
+    "product_name": "Sydney Sweeny Jeans Updated",
+    "product_description": "A pair of stylish jeans Updated",
+    "product_price": 120000,
+    "product_attributes": {
+        "brand": "Boohoo 1"
+    }
 }
