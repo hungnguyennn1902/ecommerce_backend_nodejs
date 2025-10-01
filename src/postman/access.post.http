@@ -41,16 +41,16 @@ x-client-id: 68cabaa19f39b487ce1f7033
 authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
 
 {
-    "product_name": "Sydney Sweeny Jeans",
+    "product_name": "Flannel Shirt",
     "product_description": "A pair of stylish jeans",
-    "product_price": 100001,
+    "product_price": 100,
     "product_type": "Clothing",
     "product_thumb" : "product_thumb",
-    "product_quantity": 1500,
+    "product_quantity": 150,
     "product_attributes": {
-        "brand": "Boo1hoo154dsf",
-        "size": "MLLL11111",
-        "material": "Denim"
+        "brand": "Boo",
+        "size": "XL",
+        "material": "Cotton"
     }
 }
 
