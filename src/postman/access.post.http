@@ -102,3 +102,41 @@ authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlm
         "brand": "Boohoo 1"
     }
 }
+
+### create discount
+POST {{url_dev}}/discount/create
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTk3NTgwMDIsImV4cCI6MTc1OTkzMDgwMn0.aqEqxA9m4Fs7FWj3epXiTLROTrXT1O89S-7WT5SUjJmUQ98mHz7vQzeqa7T21so-Sk_Pw6UMkXky3b8z9Ge5d2iFdD7vQKh_RowaVjFx7PhjzX0Oen7Fu-CLjKyn31pf7dt3r-OAoSXKoXmCq18sEvmGlzoS-hu48ECgU2-hLZj_M2Zy9FTRXsrJQUJsoY-3R2TImXpuYm-CJhV6c5CZEHSaM334q484XTIk6a-hAKh3jDuxoNqT2jZUZ6r509WzcU2EoOIdO2J8lMNcB3Y-9CO-lWSs6UUaInqjSSyM6IvVQyi0J7UKjnuBatTPqyi9_K9mHhhAkWlYqhMQRMFp1g
+
+{
+    "name": "Summer Sale",
+    "description": "Get 10% off on all items during our summer sale!",
+    "code": "SUMMER2024",
+    "type": "percentage",  
+    "value": 10,
+    "startDate": "2025-10-01T00:00:00Z",
+    "endDate": "2025-10-31T23:59:59Z",
+    "maxUsage": 100,
+    "maxUsagePerUser": 2,
+    "minOrderValue": 50,
+    "isActive": true,
+    "shopId": "68cabaa19f39b487ce1f7033"
+}
+
+### get all product with discount code
+GET {{url_dev}}/discount/list-product?code=SUMMER2024&limit=10&page=1
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTk3NTgwMDIsImV4cCI6MTc1OTkzMDgwMn0.aqEqxA9m4Fs7FWj3epXiTLROTrXT1O89S-7WT5SUjJmUQ98mHz7vQzeqa7T21so-Sk_Pw6UMkXky3b8z9Ge5d2iFdD7vQKh_RowaVjFx7PhjzX0Oen7Fu-CLjKyn31pf7dt3r-OAoSXKoXmCq18sEvmGlzoS-hu48ECgU2-hLZj_M2Zy9FTRXsrJQUJsoY-3R2TImXpuYm-CJhV6c5CZEHSaM334q484XTIk6a-hAKh3jDuxoNqT2jZUZ6r509WzcU2EoOIdO2J8lMNcB3Y-9CO-lWSs6UUaInqjSSyM6IvVQyi0J7UKjnuBatTPqyi9_K9mHhhAkWlYqhMQRMFp1g
+
+### get all discounts for shop
+GET {{url_dev}}/discount/shop?limit=10&page=1
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTk3NTgwMDIsImV4cCI6MTc1OTkzMDgwMn0.aqEqxA9m4Fs7FWj3epXiTLROTrXT1O89S-7WT5SUjJmUQ98mHz7vQzeqa7T21so-Sk_Pw6UMkXky3b8z9Ge5d2iFdD7vQKh_RowaVjFx7PhjzX0Oen7Fu-CLjKyn31pf7dt3r-OAoSXKoXmCq18sEvmGlzoS-hu48ECgU2-hLZj_M2Zy9FTRXsrJQUJsoY-3R2TImXpuYm-CJhV6c5CZEHSaM334q484XTIk6a-hAKh3jDuxoNqT2jZUZ6r509WzcU2EoOIdO2J8lMNcB3Y-9CO-lWSs6UUaInqjSSyM6IvVQyi0J7UKjnuBatTPqyi9_K9mHhhAkWlYqhMQRMFp1g
+
+
