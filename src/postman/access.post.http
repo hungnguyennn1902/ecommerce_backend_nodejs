@@ -139,4 +139,52 @@ x-api-key: 2c50900d3355008b62abf3b83bf39440
 x-client-id: 68cabaa19f39b487ce1f7033
 authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTk3NTgwMDIsImV4cCI6MTc1OTkzMDgwMn0.aqEqxA9m4Fs7FWj3epXiTLROTrXT1O89S-7WT5SUjJmUQ98mHz7vQzeqa7T21so-Sk_Pw6UMkXky3b8z9Ge5d2iFdD7vQKh_RowaVjFx7PhjzX0Oen7Fu-CLjKyn31pf7dt3r-OAoSXKoXmCq18sEvmGlzoS-hu48ECgU2-hLZj_M2Zy9FTRXsrJQUJsoY-3R2TImXpuYm-CJhV6c5CZEHSaM334q484XTIk6a-hAKh3jDuxoNqT2jZUZ6r509WzcU2EoOIdO2J8lMNcB3Y-9CO-lWSs6UUaInqjSSyM6IvVQyi0J7UKjnuBatTPqyi9_K9mHhhAkWlYqhMQRMFp1g
 
+### add product to cart
+POST {{url_dev}}/cart/add
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
 
+{
+    "userId": "HUNG101",
+    "product": {
+        "productId": "68da52410b63dfc65614e7db",
+        "shopId": "68cabaa19f39b487ce1f7033",
+        "quantity": 2
+    }
+}
+
+### delete cart item
+DELETE {{url_dev}}/cart/delete
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "userId": "HUNG101",
+    "productId": "68da52410b63dfc65614e7db"
+}
+
+### get user cart
+GET {{url_dev}}/cart?userId=HUNG101
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### update cart item
+POST {{url_dev}}/cart/update
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "userId": "HUNG101",
+    "shopOrderIds": [
+        {
+            "shopId": "68cabaa19f39b487ce1f7033",
+            "itemProducts": [
+                {
+                    "productId": "68da52410b63dfc65614e7db",
+                    "quantity": 5,
+                    "oldQuantity": 8
+                }
+            ]
+        }
+    ]
+}
