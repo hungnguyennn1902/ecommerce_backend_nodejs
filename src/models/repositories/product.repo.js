@@ -31,7 +31,7 @@ const findAllProducts = async ({ limit, sort, page, filter, select }) => {
     return products;
 }
 
-const findProduct = async ({ product_id, unselect }) => {
+const findProduct = async ({ product_id, unselect = [] }) => {
     return await product.findById(product_id)
         .select(getUnSelectData(unselect))
 }
@@ -75,6 +75,24 @@ const updateProductById = async ({ productId, bodyUpdate, model, isNew = true })
         { new: isNew }
     )
 }
+
+
+const getProductById = async (productId) => {
+    return await product.findById(productId).lean();
+}
+const checkProductByServer = async (products) => {
+    return await Promise.all(products.map(async (product) => {
+        const foundProduct = await getProductById(product.productId)
+        if(foundProduct) {
+            return{
+                price: foundProduct.product_price,
+                quantity: product.quantity,
+                productId: product.productId
+            }
+        }
+        return null;
+    }))
+}
 module.exports = {
     findAllDraftsForShop,
     findAllPublishedForShop,
@@ -83,5 +101,6 @@ module.exports = {
     searchProducts,
     findAllProducts,
     findProduct, 
-    updateProductById
+    updateProductById,
+    checkProductByServer
 };

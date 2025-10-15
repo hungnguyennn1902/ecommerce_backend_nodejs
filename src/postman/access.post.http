@@ -188,3 +188,31 @@ x-api-key: 2c50900d3355008b62abf3b83bf39440
         }
     ]
 }
+
+### checkout review
+POST {{url_dev}}/checkout/review
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "cartId": "68e4b7ea935aba89385e24e9",
+    "userId": "HUNG101",
+    "shopOrderIds": [
+        {
+            "shopId": "68cabaa19f39b487ce1f7033",
+            "shopDiscounts": [
+                {
+                    "codeId": "SUMMER2024"
+                }
+            ],
+            "itemProducts": [
+                {
+                    "productId": "68da52410b63dfc65614e7db",
+                    "quantity": 5,
+                    "price": 120000
+                },
+
+            ]
+        }
+    ]
+}
