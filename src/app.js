@@ -14,6 +14,22 @@ app.use(compression())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//test redis pubsub
+// const inventoryTest = require('../src/test/inventory.test');
+// const productTest = require('../src/test/product.test');
+
+// (async () => {
+//     // Đảm bảo subscriber đã sẵn sàng
+//     await inventoryTest.listenToPurchaseEvent();
+
+//     // Thêm một chút delay để chắc chắn Redis đã subscribe xong
+//     await new Promise((res) => setTimeout(res, 1000));
+
+//     // Sau đó mới publish
+//     await productTest.purcharseProduct('product:123', 1);
+// })();
+
+
 
 //check overload
 // checkOverload();
