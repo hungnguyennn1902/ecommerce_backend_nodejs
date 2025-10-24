@@ -216,3 +216,33 @@ x-api-key: 2c50900d3355008b62abf3b83bf39440
         }
     ]
 }
+
+### create comment
+POST {{url_dev}}/comment/create
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NjA1OTgwMjMsImV4cCI6MTc2MDc3MDgyM30.hk1gCFOA3uBGCD2gYm05U91lTa-pECfksSI4ahjI0XAHU-BjL_rr3MbV4snHIWBg_0QBjT9oIe0wlN3sOAUGIPz8-yw3vn-nzcPY_26WietMzKE3mr5t57UmKTbQaamm95UDz9YDkaRjgtB1tUiSQmKJIX4_LyLtg8lRjvMRX1pDm6x9-3C_P1j9rFjc_ym4iK_mVocLW6LJ7Y4O_inOzpKe_whob6Eup5YkXx5W04VOMzmv4RUJ_sfTgk3DgongUaTCSWWHKWFwH56M4MVeewVAzkEPgRP7ASOZo44YQeA1S_WHN_Nh9UaWh8-W6vAwTMrtA5GRSfIzBEFNE3FFyw
+
+{
+    "productId": "68da52410b63dfc65614e7db",
+    "userId": 102,
+    "content": "Comment 1.1",
+    "parentCommentId": "68f098d5a3f8a9be9cb3c85e"
+}
+
+### get comments by parent id
+GET {{url_dev}}/comment/by-parent?parentCommentId=68f098d5a3f8a9be9cb3c85e&productId=68da52410b63dfc65614e7db
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### delete comment
+DELETE {{url_dev}}/comment/delete
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "commentId": "68f098d5a3f8a9be9cb3c85e",
+    "productId": "68da52410b63dfc65614e7db"
+}
+
