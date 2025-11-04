@@ -3,6 +3,10 @@
 const express = require('express');
 const { apiKey, permission } = require('../auth/checkAuth.js');
 const router = express.Router();
+const logDiscordMiddleware = require('../middlewares/log.discord.js');
+
+// Log all requests to Discord
+router.use(logDiscordMiddleware);
 //check Apikey
 router.use(apiKey)
 //check permission
