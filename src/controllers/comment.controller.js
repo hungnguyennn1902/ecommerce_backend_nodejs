@@ -1,7 +1,7 @@
 'use strict'
 const CommentService = require('../services/comment.service')
 const { SuccessResponse, Created } = require('../core/success.response')
-class DiscountController {
+class CommentController {
     static async createComment(req, res, next) {
         new Created({
             message: 'Create comment successfully',
@@ -21,4 +21,4 @@ class DiscountController {
         }).send(res);
     }
 }
-module.exports = DiscountController;
+module.exports = CommentController;

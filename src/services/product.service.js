@@ -5,7 +5,7 @@ const { product, clothing, electronic } = require('../models/product.model');
 const { findAllDraftsForShop, findAllPublishedForShop, publishProductByShop, unPublishProductByShop, searchProducts, findAllProducts, findProduct, updateProductById } = require('../models/repositories/product.repo');
 const { removeUndefinedObject, updateNestedObjectParser } = require('../utils');
 const { insertInventory } = require('../models/repositories/inventory.repo');
-
+const NotiService = require('./notification.service');
 class ProductFactory {
     //Create new product
     static async createProduct(type, payload) {
@@ -94,6 +94,15 @@ class Product {
                 productId: newProduct._id,
                 shopId: this.product_shop,
                 stock: this.product_quantity
+            })
+            await NotiService.pushNotiToSystem({
+                type: 'SHOP-001',
+                senderId: this.product_shop,
+                receiverId: 1,
+                options: {
+                    product_name: this.product_name,
+                    shop_name: this.product_shop
+                }
             })
         }
         return newProduct

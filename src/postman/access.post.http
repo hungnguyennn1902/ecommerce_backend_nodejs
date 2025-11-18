@@ -38,10 +38,10 @@ POST {{url_dev}}/product/create
 Content-Type: application/json
 x-api-key: 2c50900d3355008b62abf3b83bf39440
 x-client-id: 68cabaa19f39b487ce1f7033
-authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NTkxMzgzNDksImV4cCI6MTc1OTMxMTE0OX0.m2dc9hgJgzHSYJ1PQft5uz0jT3-wILPQzyNa7w9FPmOHq8oBnQPq5BDuYPacdOaRPbQyncAYxA-up-SRwNvdK6OJCOlmjA3SfuQOAr-nnYjT4uZHMuCRUkfs4ClgGxxNhvZz43FfJokYpkZZ2vXe6Y9EjBAAqHGvdEESv-C50MZyKxe21so3ddLsGN-2Z_tIBIu2oYlGp-pViwaPV7_AuhB47xTdj8DaA9t8dB6dOwjN41n9Q1NijqHwYjT4i3OgSIBRFaHrXnmrssx_S843Z9ibtCBelfCLoAQe1mAqBcD36KErhNAXcCZ3vU5sxU6jsSkL8E2XCCRp2819xZ4Hbg
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NjIyMjg2MTAsImV4cCI6MTc2MjQwMTQxMH0.dD9NAv6pzn50gVokhtRVLUGP7HR4p65oxMxMyhAfdWvNeK0MHcDX7t_hylOOOC545rt3VPmacSpCUvma8eYgYCI_KaiaYZebPjcwxT8eKy1oTIjPU-NF6Sx25hb5hRLuykCDUBiCjJ2mLklo8X03qaNTASqeDOtU_RYR6s5V03DqmNyifL1Ape4BFsLd6DcqnK9_iKsjuDV9PKfXJlTBFa7xL4yDa0DvBwN9Q6Kq4pHcQRl-GbIc7vxO54K1DorHcwvBfl9Ca_jp5VMsHrJYqJgpmCLLPKohMygN0W4pbOeqw3OKRjipVMJ9rK4TZhlPzUhPBgBuOp6PWrMu5JlzxQ
 
 {
-    "product_name": "Flannel Shirt",
+    "product_name": "Test1",
     "product_description": "A pair of stylish jeans",
     "product_price": 100,
     "product_type": "Clothing",
@@ -245,4 +245,13 @@ x-api-key: 2c50900d3355008b62abf3b83bf39440
     "commentId": "68f098d5a3f8a9be9cb3c85e",
     "productId": "68da52410b63dfc65614e7db"
 }
+
+### get notifications by user
+GET {{url_dev}}/notification/by-user
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+x-client-id: 68cabaa19f39b487ce1f7033
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGNhYmFhMTlmMzliNDg3Y2UxZjcwMzMiLCJlbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJpYXQiOjE3NjIyMjg2MTAsImV4cCI6MTc2MjQwMTQxMH0.dD9NAv6pzn50gVokhtRVLUGP7HR4p65oxMxMyhAfdWvNeK0MHcDX7t_hylOOOC545rt3VPmacSpCUvma8eYgYCI_KaiaYZebPjcwxT8eKy1oTIjPU-NF6Sx25hb5hRLuykCDUBiCjJ2mLklo8X03qaNTASqeDOtU_RYR6s5V03DqmNyifL1Ape4BFsLd6DcqnK9_iKsjuDV9PKfXJlTBFa7xL4yDa0DvBwN9Q6Kq4pHcQRl-GbIc7vxO54K1DorHcwvBfl9Ca_jp5VMsHrJYqJgpmCLLPKohMygN0W4pbOeqw3OKRjipVMJ9rK4TZhlPzUhPBgBuOp6PWrMu5JlzxQ
+
+
 

@@ -6,11 +6,12 @@ const router = express.Router();
 const logDiscordMiddleware = require('../middlewares/log.discord.js');
 
 // Log all requests to Discord
-router.use(logDiscordMiddleware);
+// router.use(logDiscordMiddleware);
 //check Apikey
 router.use(apiKey)
 //check permission
 router.use(permission('0000'))
+router.use('/v1/api/notification', require('./notification/index.js'));
 router.use('/v1/api/comment', require('./comment/index.js'));
 router.use('/v1/api/checkout', require('./checkout/index.js'));
 router.use('/v1/api/cart', require('./cart/index.js'));
