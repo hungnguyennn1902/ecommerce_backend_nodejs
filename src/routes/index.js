@@ -11,6 +11,7 @@ const logDiscordMiddleware = require('../middlewares/log.discord.js');
 router.use(apiKey)
 //check permission
 router.use(permission('0000'))
+router.use('/v1/api/upload', require('./upload/index.js'));
 router.use('/v1/api/notification', require('./notification/index.js'));
 router.use('/v1/api/comment', require('./comment/index.js'));
 router.use('/v1/api/checkout', require('./checkout/index.js'));
