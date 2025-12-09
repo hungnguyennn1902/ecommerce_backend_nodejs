@@ -18,7 +18,16 @@ class UploadController {
             message: 'Upload image from local successfully',
             data: await UploadService.uploadImageFromLocal({ path: file.path })
         }).send(res)
-
+    }
+    static async uploadImageToS3(req, res, next){
+        const file = req.file
+        if(!file){
+            throw new NotFoundError('File not found').send(res)
+        }
+        new SuccessResponse({
+            message: 'Upload image to S3 successfully',
+            data: await UploadService.uploadImageToS3({file})
+        }).send(res)
     }
 }
 module.exports = UploadController;
