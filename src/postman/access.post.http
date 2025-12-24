@@ -258,6 +258,49 @@ POST {{url_dev}}/upload/product
 Content-Type: application/json
 x-api-key: 2c50900d3355008b62abf3b83bf39440
 
+### view all profiles
+GET {{url_dev}}/profile/viewAny?role=admin
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### create resource
+POST {{url_dev}}/rbac/resource
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "name": "balance",
+    "slug": "b00001",
+    "description": "Balance resource"
+}
+
+### list resources
+GET {{url_dev}}/rbac/resources
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+### create role
+POST {{url_dev}}/rbac/role
+Content-Type: application/json
+x-api-key: 2c50900d3355008b62abf3b83bf39440
+
+{
+    "name": "admin",
+    "slug": "a00001",
+    "description": "Admin role",
+    "grants": [
+        {
+            "resource": "6943a2f581ca79d27ed7e415",
+            "actions": ["update:any", "view:any", "delete:any"]
+        },
+        {
+            "resource": "6943e95ed833a17fc64a119d",
+            "actions": ["create:any", "view:any", "delete:any"]
+        }
+    ]
+}
+
+
 
 
 
