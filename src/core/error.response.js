@@ -1,4 +1,8 @@
 'use strict'
+
+const logger = require("../logger/winston.log")
+const mylogger = require("../logger/mylogger.log")
+
 const statusCode = {
     FORBIDDEN: 403,
     CONFLICT : 409,
@@ -17,6 +21,14 @@ class ErrorResponse extends Error {
     constructor(message, status) {
         super(message)
         this.status = status
+        this.now = Date.now()
+        //Winston log the error 
+        // logger.error(`${this.status} - ${this.message}`)
+        // mylogger.error(this.message,{
+        //     context: 'ErrorResponse',
+        //     data: {}
+        // })
+
     }
 }
 class ConflictRequestError extends ErrorResponse {
